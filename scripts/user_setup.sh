@@ -24,3 +24,7 @@ if [ -z "$PATH" ] || [ "$PATH" != "$PATH_VALUE" ]; then
 	echo "export PATH=$PATH_VALUE" >> ~/.bashrc
 fi
 
+# Work-around for adb permission issue.
+sudo /usr/local/android-sdk-linux/platform-tools/adb kill-server
+sudo /usr/local/android-sdk-linux/platform-tools/adb start-server
+
