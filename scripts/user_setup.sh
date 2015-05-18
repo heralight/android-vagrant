@@ -3,8 +3,8 @@
 
 # Paths
 GRADLE_HOME_VALUE=/usr/local/gradle-2.2.1
-ANDROID_HOME_VALUE=/usr/local/android-sdk-linux
-ANDROID_STUDIO_HOME_VALUE=/usr/local/android-studio
+ANDROID_HOME_VALUE=/home/vagrant/android-sdk-linux
+ANDROID_STUDIO_HOME_VALUE=/home/vagrant/android-studio
 PATH_VALUE=$PATH:${ANDROID_STUDIO_HOME_VALUE}/bin:${ANDROID_HOME_VALUE}/tools:$ANDROID_HOME_VALUE/platform-tools:${GRADLE_HOME_VALUE}/bin
 
 source ~/.profile
@@ -25,6 +25,6 @@ if [ -z "$PATH" ] || [ "$PATH" != "$PATH_VALUE" ]; then
 fi
 
 # Work-around for adb permission issue.
-sudo /usr/local/android-sdk-linux/platform-tools/adb kill-server
-sudo /usr/local/android-sdk-linux/platform-tools/adb start-server
+sudo /home/vagrant/android-sdk-linux/platform-tools/adb kill-server
+sudo /home/vagrant/android-sdk-linux/platform-tools/adb start-server
 
