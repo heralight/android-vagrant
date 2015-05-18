@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+if [ -f /var/opt/provisioned ]; then
+	echo "System already provisioned, re-assigning env. paths"
+	su -c "source /vagrant/scripts/user_setup.sh" vagrant
+	exit 0
+fi
+
+# Mark system as provisioned
+touch /var/opt/provisioned
+
 # Install a Desktop Environment
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends xubuntu-desktop
