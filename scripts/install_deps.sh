@@ -4,6 +4,13 @@
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends xubuntu-desktop
 
+# Install Java JDK 7
+sudo apt-get --yes install software-properties-common
+sudo add-apt-repository --yes ppa:webupd8team/java
+sudo apt-get update
+echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+sudo apt-get --yes install oracle-java7-installer
+
 echo "Installing Android SDK and setting up paths..."
 sudo dpkg --add-architecture i386 && apt-get update && apt-get install -yq libstdc++6:i386 zlib1g:i386 libncurses5:i386 ant maven --no-install-recommends
 export GRADLE_URL=http://services.gradle.org/distributions/gradle-2.2.1-all.zip
